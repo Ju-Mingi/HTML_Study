@@ -35,6 +35,9 @@ body{
   width : 50%;
   padding-top: 20px;
 }
+#macbook{
+  width: 50%;
+}
 @media(max-width:800px){
   #grid{
     display:block;
