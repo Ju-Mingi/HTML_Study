@@ -36,7 +36,8 @@ body{
   padding-top: 20px;
 }
 #macbook{
-  width: 50%;
+  width: 500px;
+  height: 400px;
 }
 @media(max-width:800px){
   #grid{
