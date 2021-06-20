@@ -1,81 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <link rel="stylesheet" href="style.css">
-  <body>
-    <div id="container">
-      <div class="item1">
-        <h1>
-          <a href="index.html">
-            <div style="display:inline; color:blue;">
-              Minky
-            </div>
-            <div style="display:inline; color:black;">
-              Study
-            </div>
-          </a>
-        </div>
-      <div class="item2">
-        <h2>ing</h2>
-        <ul>
+
+<head>
+  <meta charset="utf-8">
+  <title>Minky Study Note</title>
+  <script type="text/javascript">
+    // 커서에 따른 다크모드 이미지 변경 기능 (커서 올림)
+    function MouseOver(){
+      this.setAttribute("src","dark_mode_mouseover.png");
+    }
+    // 커서에 따른 다크모드 이미지 (커서 내림)
+    function MouseOut(){
+      this.setAttribute("src","dark_mode_mouseout.png");
+    }
+    // 다크 모드 기능 -- start
+    function nightDayHandler(self) {
+      var target = document.querySelector('body');
+      if (self.value === 'night') {
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.value = 'day';
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = 'white';
+          i = i + 1;
+        }
+        // 페이지 제목의 배경색 변경
+        document.querySelector('.item1').style.backgroundColor = 'black';
+        // 페이지 제목의 Study 색상 변경
+        document.querySelector('.last_title').style.color = 'white';
+      } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        self.value = 'night';
+        // 모든 a 태그의 색상 변경
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while (i < alist.length) {
+          alist[i].style.color = 'black';
+          i = i + 1;
+        }
+        document.querySelector('.item1').style.backgroundColor = 'white';
+        document.querySelector('.last_title').style.color = 'black';
+      }
+    }
+    // -- 다크 모드 기능 end
+  </script>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+  <div id="container">
+    <div class="item1">
+      <h1>
+        <a href="index.html">
+          <div style="display:inline; color:blue;">
+            Minky
+          </div>
+          <div class="last_title" style="display:inline; color:black;">
+            Study
+          </div>
+        </a>
+    </div>
+    <div class="item2">
+      <h2>ing</h2>
+      <ul>
         <li><a href="1.html">HTML</a></li>
         <li><a href="2.html">CSS</a></li>
         <li><a href="3.html">JavaScript</a></li>
       </ul>
-      </div>
-      <div class="item3">
-        <img src="helloworld.jpg" width="500px">
-        <h2>WEB</h2>
-        <p>HTTP 프로토콜을 써서 어떤 URL에서 받아오는 HTML로 쓰인 문서. 쉽게 말해서 지금 당신이 보고 있는 것.<br>
+    </div>
+    <div class="item3">
+      <img src="helloworld.jpg" width="500px">
+      <h2>WEB</h2>
+      <p>HTTP 프로토콜을 써서 어떤 URL에서 받아오는 HTML로 쓰인 문서. 쉽게 말해서 지금 당신이 보고 있는 것.<br>
 
-블로그니 마이크로 블로그니 웹 2.0이니 해도 전부 결국은 웹사이트 기반으로 동작하고 있다.<br>
+        블로그니 마이크로 블로그니 웹 2.0이니 해도 전부 결국은 웹사이트 기반으로 동작하고 있다.<br>
 
-웹사이트 구조는 일종의 미들웨어 역할을 하기 때문에 여러 모로 편리하다.<br> 기존의 컴퓨터는 어플리케이션을 실행하고 정보를 받아와야 했지만, 웹사이트를 쓰면 OS나 하드웨어와는 상관없이 웹브라우저만 돌아가면 어디에서나 정보를 얻을 수 있기 때문이다.<br>
+        웹사이트 구조는 일종의 미들웨어 역할을 하기 때문에 여러 모로 편리하다.<br> 기존의 컴퓨터는 어플리케이션을 실행하고 정보를 받아와야 했지만, 웹사이트를 쓰면 OS나 하드웨어와는 상관없이 웹브라우저만 돌아가면 어디에서나 정보를 얻을 수 있기 때문이다.<br>
 
-하지만 서비스가 아닌 개인 사이트 형식은 점점 줄어들고 있다.<br> 웹사이트 제작은 직접 제작하거나 외부 업체에 제작을 의뢰할 수 있으며, 국내에는 다수의 웹에이전시가 홈페이지 제작 서비스를 제공하고 있다.
-        </p>
-      </div>
-      <div style="position:fixed; bottom:100px; right: 50px; font-size:35px;">
-          <a href="#container">top</a>
-      </div>
-      <div class="item4">
-        <p>
-          <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://web1-dsiqu7abwe.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </p>
-        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/609632a5185beb22b30b4590/1f55bbm6p';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
+        하지만 서비스가 아닌 개인 사이트 형식은 점점 줄어들고 있다.<br> 웹사이트 제작은 직접 제작하거나 외부 업체에 제작을 의뢰할 수 있으며, 국내에는 다수의 웹에이전시가 홈페이지 제작 서비스를 제공하고 있다.
+      </p>
+      <!-- 다크 모드 버튼형 이미지 구현 -->
+      <input id="night_day" type="image" src="dark_mode_mouseout.png" value="night" onclick="
+    nightDayHandler(this);
+  " onmouseover="MouseOver.call(this)" onmouseout="MouseOut.call(this)" width="150px;">
+    </div>
+    <!-- 페이지 최상단 이동 아이콘 추가 예정 -->
+    <div style="position:fixed; top:100px; right: 50px; font-size:35px;">
+      <a href="#container">top</a>
+    </div>
+    <!-- 댓글 기능 disqus 사용 -->
+    <div class="item4">
+      <p>
+      <div id="disqus_thread"></div>
+      <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement('script');
+          s.src = 'https://web1-dsiqu7abwe.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
         })();
-        </script>
-        <!--End of Tawk.to Script-->
-        </div>
-        </body>
-        </html>
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </p>
+      <!-- QnA 시스템 tawk.to 구현 -->
+      <!--Start of Tawk.to Script-->
+      <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+          Tawk_LoadStart = new Date();
+        (function() {
+          var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+          s1.async = true;
+          s1.src = 'https://embed.tawk.to/609632a5185beb22b30b4590/1f55bbm6p';
+          s1.charset = 'UTF-8';
+          s1.setAttribute('crossorigin', '*');
+          s0.parentNode.insertBefore(s1, s0);
+        })();
+      </script>
+      <!--End of Tawk.to Script-->
+    </div>
+</body>
+
+</html>
