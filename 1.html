@@ -10,8 +10,8 @@
       this.setAttribute("src", "dark_mode_mouseover.png");
     }
     // 커서에 따른 다크모드 이미지 (커서 내림)
-    function MouseOut() {
-      this.setAttribute("src", "dark_mode_mouseout.png");
+    function MouseOut(){
+      this.setAttribute("src","light_mode_mouseout.png");
     }
     // 다크 모드 기능 -- start
     function nightDayHandler(self) {
@@ -74,11 +74,10 @@
     <div class="item3">
       <img src="HTML_IMG.png" width="300px" height="300px">
       <h2>HTML <input type="button" name="html5" value="나무위키" onclick="location.href='https://namu.wiki/w/HTML'"></h2>
-      <p>Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.
-        Web browsers rceive HTML documents form a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the documents.
+      <p>"Hyper Text Mark-up Language" 의 약자. 웹 페이지의 모습을 기술하기 위한 규약. 프로그래밍 언어가 아니라 마크업 언어[2]다. 헷갈리지 않도록 하자.[3] 웹사이트에서 흔히 볼 수 있는 htm이나 html 확장자가 바로 이 언어로 작성된 문서다.
       </p>
       <!-- 다크 모드 버튼형 이미지 구현 -->
-      <input id="night_day" type="image" src="dark_mode_mouseout.png" value="night" onclick="
+      <input id="night_day" type="image" src="light_mode_mouseout.png" value="night" onclick="
     nightDayHandler(this);
   " onmouseover="MouseOver.call(this)" onmouseout="MouseOut.call(this)" width="150px;">
     </div>

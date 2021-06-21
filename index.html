@@ -11,7 +11,7 @@
     }
     // 커서에 따른 다크모드 이미지 (커서 내림)
     function MouseOut(){
-      this.setAttribute("src","dark_mode_mouseout.png");
+      this.setAttribute("src","light_mode_mouseout.png");
     }
     // 다크 모드 기능 -- start
     function nightDayHandler(self) {
@@ -83,7 +83,7 @@
         하지만 서비스가 아닌 개인 사이트 형식은 점점 줄어들고 있다.<br> 웹사이트 제작은 직접 제작하거나 외부 업체에 제작을 의뢰할 수 있으며, 국내에는 다수의 웹에이전시가 홈페이지 제작 서비스를 제공하고 있다.
       </p>
       <!-- 다크 모드 버튼형 이미지 구현 -->
-      <input id="night_day" type="image" src="dark_mode_mouseout.png" value="night" onclick="
+      <input id="night_day" type="image" src="light_mode_mouseout.png" value="night" onclick="
     nightDayHandler(this);
   " onmouseover="MouseOver.call(this)" onmouseout="MouseOut.call(this)" width="150px;">
     </div>

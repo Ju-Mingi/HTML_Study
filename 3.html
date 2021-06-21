@@ -10,8 +10,8 @@
       this.setAttribute("src", "dark_mode_mouseover.png");
     }
     // 커서에 따른 다크모드 이미지 (커서 내림)
-    function MouseOut() {
-      this.setAttribute("src", "dark_mode_mouseout.png");
+    function MouseOut(){
+      this.setAttribute("src","light_mode_mouseout.png");
     }
     // 다크 모드 기능 -- start
     function nightDayHandler(self) {
@@ -75,15 +75,14 @@
       <img src="JS_IMG.png" width="300px" height="300px">
       <h2>JavaScript <input type="button" name="JavaScript" value="나무위키" onclick="location.href='https://namu.wiki/w/JavaScript'"></h2>
       <p>
-        JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies
-        of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by
-        means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines
-        supporting additional features beyond ECMA.
+        모질라 재단의 프로토타입기반의 프로그래밍 언어로, 스크립트 언어에 해당된다. 특수한 목적이 아닌 이상 모든 웹 브라우저에 인터프리터가 내장되어 있다. 오늘날 HTML, CSS와 함께 웹을 구성하는 요소 중 하나다. HTML이 웹 페이지의 기본 구조를 담당하고, CSS가 디자인을 담당한다면 JavaScript는 클라이언트 단에서 웹 페이지가 동작하는 것을 담당한다.[1] 웹 페이지를 자동차에 비유하자면, HTML은 자동차의 뼈대, CSS는 자동차의 외관, JavaScript는 자동차의 동력이라고 볼 수 있다.
+
+썬 마이크로시스템즈(현재 오라클)에서 개발한 Java와는 별 관계가 없는 언어이다. 이름이 비슷하다고 같은 언어가 아니다. 사람들이 흔히 헷갈리는 부분 중 하나. 실질적인 구동 방식도 JVM을 이용해서 돌리는 Java와, 브라우저 내에 스크립트 엔진(인터프리터)이 존재하는 JavaScript는 완전히 다르다.
       </p>
       <!-- 다크 모드 버튼형 이미지 구현 -->
-      <input id="night_day" type="image" src="dark_mode_mouseout.png" value="night" onclick="
-      nightDayHandler(this);
-    " onmouseover="MouseOver.call(this)" onmouseout="MouseOut.call(this)" width="150px;">
+      <input id="night_day" type="image" src="light_mode_mouseout.png" value="night" onclick="
+    nightDayHandler(this);
+  " onmouseover="MouseOver.call(this)" onmouseout="MouseOut.call(this)" width="150px;">
     </div>
     <!-- 페이지 최상단 이동 아이콘 추가 예정 -->
     <div style="position:fixed; top:100px; right: 50px; font-size:35px;">
